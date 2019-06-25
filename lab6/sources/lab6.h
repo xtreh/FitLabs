@@ -1,5 +1,5 @@
-#ifndef __LAB1_H
-#define __LAB1_H
+#ifndef __LAB6_H
+#define __LAB6_H
 
 #pragma once
 
