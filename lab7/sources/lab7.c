@@ -5,10 +5,10 @@ int g_adjMatrix[MAX_SIZE][MAX_SIZE];
 int createGraph(FILE *fileInput, FILE *fileOutput, int *n)
 {
 	int i, j;
-	int origin = -123, destin = -123; // происхождение и назначение края
+	int origin = -123, destin = -123; // РїСЂРѕРёСЃС…РѕР¶РґРµРЅРёРµ Рё РЅР°Р·РЅР°С‡РµРЅРёРµ РєСЂР°В¤
 	int min;
 	int node = -1;
-	int m = -1;	// количество ребер
+	int m = -1;	// РєРѕР»РёС‡РµСЃС‚РІРѕ СЂРµР±РµСЂ
 
 	fscanf(fileInput, "%d", n);
 	if (!n || (*n > 1000)) {
@@ -22,7 +22,7 @@ int createGraph(FILE *fileInput, FILE *fileOutput, int *n)
 		return -1;
 	}
 
-	// без краев
+	// Р±РµР· РєСЂР°РµРІ
 	if (m == 0)	{ 
 		for (i = 1; i <= *n; i++)
 			fprintf(fileOutput, "%d ", i);
@@ -36,15 +36,15 @@ int createGraph(FILE *fileInput, FILE *fileOutput, int *n)
 	}
 
 	for (i = 1; i <= m; i++) {
-		fscanf(fileInput, "%d", &origin); // чтение начала координат ребра
-		fscanf(fileInput, "%d", &destin); // чтение назначения ребра
+		fscanf(fileInput, "%d", &origin); // С‡С‚РµРЅРёРµ РЅР°С‡Р°Р»Р° РєРѕРѕСЂРґРёРЅР°С‚ СЂРµР±СЂР°
+		fscanf(fileInput, "%d", &destin); // С‡С‚РµРЅРёРµ РЅР°Р·РЅР°С‡РµРЅРёВ¤ СЂРµР±СЂР°
 
 		if ((origin == -123) || (destin == -123)) {
 			fprintf(fileOutput, "%s", "bad number of lines");
 			return -1;
 		}
 
-		// Циклический граф
+		// Г·РёРєР»РёС‡РµСЃРєРёР№ РіСЂР°С„
 		if (origin == destin) {
 			fprintf(fileOutput, "%s", "impossible to sort"); 
 			return -1;
@@ -54,11 +54,11 @@ int createGraph(FILE *fileInput, FILE *fileOutput, int *n)
 			fprintf(fileOutput, "%s", "bad vertex");
 			return -1;
 		} else {
-			g_adjMatrix[origin][destin] = 1; // заполнение ячейки
+			g_adjMatrix[origin][destin] = 1; // Р·Р°РїРѕР»РЅРµРЅРёРµ В¤С‡РµР№РєРё
 			if (origin == node) {
 				for (j = origin - 1; j >= 1; j--) {
 					if (g_adjMatrix[j][origin] == 1) {
-						// Циклический граф
+						// Г·РёРєР»РёС‡РµСЃРєРёР№ РіСЂР°С„
 						if (g_adjMatrix[j - 1][j] == 1) {
 							fprintf(fileOutput, "%s", "impossible to sort");
 							return -1;
@@ -69,7 +69,7 @@ int createGraph(FILE *fileInput, FILE *fileOutput, int *n)
 			node = destin;
 		}
 
-		if (m < *n - 1)	{ // число рёбер слишком мало
+		if (m < *n - 1)	{ // С‡РёСЃР»Рѕ СЂР„Р±РµСЂ СЃР»РёС€РєРѕРј РјР°Р»Рѕ
 			if (origin < destin)
 				min = origin;
 			else
@@ -93,14 +93,14 @@ int createGraph(FILE *fileInput, FILE *fileOutput, int *n)
 
 void insertQueue(int node, int *pImpos, int *pRear, int *pFront, int *pQueue)
 {
-	if (*pRear == MAX_SIZE - 1)	// выход за границы => невозможно отсортировать граф
+	if (*pRear == MAX_SIZE - 1)	// РІС‹С…РѕРґ Р·Р° РіСЂР°РЅРёС†С‹ => РЅРµРІРѕР·РјРѕР¶РЅРѕ РѕС‚СЃРѕСЂС‚РёСЂРѕРІР°С‚СЊ РіСЂР°С„
 		*pImpos = 1;
 	else {
-		if (*pFront == -1)	// Если очередь изначально пуста
+		if (*pFront == -1)	// в‰€СЃР»Рё РѕС‡РµСЂРµРґСЊ РёР·РЅР°С‡Р°Р»СЊРЅРѕ РїСѓСЃС‚Р°
 			*pFront = 0;
 
 		*pRear = *pRear + 1;
-		pQueue[*pRear] = node;	// Вставка узла в массив очереди
+		pQueue[*pRear] = node;	// В¬СЃС‚Р°РІРєР° СѓР·Р»Р° РІ РјР°СЃСЃРёРІ РѕС‡РµСЂРµРґРё
 	}
 }
 
@@ -133,9 +133,9 @@ int main()
 {
 	FILE *inputFile;
 	FILE *outputFile;
-	int n = 0;	// число вершин
-	int impos = 0;	// невозможно ли отсортировать граф (0 для "Нет", 1 Для "да")
-	int front = -1, rear = -1, queue[MAX_SIZE];	// передняя часть очереди, задняя часть очереди и сама очередь
+	int n = 0;	// С‡РёСЃР»Рѕ РІРµСЂС€РёРЅ
+	int impos = 0;	// РЅРµРІРѕР·РјРѕР¶РЅРѕ Р»Рё РѕС‚СЃРѕСЂС‚РёСЂРѕРІР°С‚СЊ РіСЂР°С„ (0 РґР»В¤ "РЊРµС‚", 1 Ж’Р»В¤ "РґР°")
+	int front = -1, rear = -1, queue[MAX_SIZE];	// РїРµСЂРµРґРЅВ¤В¤ С‡Р°СЃС‚СЊ РѕС‡РµСЂРµРґРё, Р·Р°РґРЅВ¤В¤ С‡Р°СЃС‚СЊ РѕС‡РµСЂРµРґРё Рё СЃР°РјР° РѕС‡РµСЂРµРґСЊ
 	int i, j = 0, k;
 	int topsort[MAX_SIZE], indeg[MAX_SIZE];
 
@@ -150,7 +150,7 @@ int main()
 	if (createGraph(inputFile, outputFile, &n))
 		return 1;
 
-	// поиск in degree каждого узла
+	// РїРѕРёСЃРє in degree РєР°Р¶РґРѕРіРѕ СѓР·Р»Р°
 	for (i = 1; i <= n; i++) {
 		indeg[i] = inDegree(i, &n);
 		if (indeg[i] == 0)
@@ -162,16 +162,16 @@ int main()
 		}
 	}
 
-	// в цикле, пока очередь не пуста
+	// РІ С†РёРєР»Рµ, РїРѕРєР° РѕС‡РµСЂРµРґСЊ РЅРµ РїСѓСЃС‚Р°
 	while (front <= rear) {
 		k = deleteQueue(&impos, &rear, &front, queue);
 		if (impos) {
 			fprintf(outputFile, "%s", "impossible to sort");
 			return 0;
 		}
-		topsort[j++] = k; //добавление узла k в массив topsort
+		topsort[j++] = k; //РґРѕР±Р°РІР»РµРЅРёРµ СѓР·Р»Р° k РІ РјР°СЃСЃРёРІ topsort
 
-		// удаление всех ребер, идущих от k-узла
+		// СѓРґР°Р»РµРЅРёРµ РІСЃРµС… СЂРµР±РµСЂ, РёРґСѓС‰РёС… РѕС‚ k-СѓР·Р»Р°
 		for (i = 1; i <= n; i++) {
 			if (g_adjMatrix[k][i] == 1) {
 				g_adjMatrix[k][i] = 0;

@@ -9,44 +9,44 @@
 #define MAX_SIZE 10000
 
 ///<summary>
-/// Матрица смежности графа
+/// С›Р°С‚СЂРёС†Р° СЃРјРµР¶РЅРѕСЃС‚Рё РіСЂР°С„Р°
 ///</summary>
 extern int g_adjMatrix[MAX_SIZE][MAX_SIZE];
 
 ///<summary>
-/// Создание графа
+/// вЂ”РѕР·РґР°РЅРёРµ РіСЂР°С„Р°
 ///</summary>
-///<param name="fileInput">Указатель на input файл</param>
-///<param name="fileOutput">Указатель на output файл</param>
-///<param name="n">Указатель на переменную для хранения количества узлов</param>
-///<returns>Создание графа и возврат размера графа</returns>
+///<param name="fileInput">вЂќРєР°Р·Р°С‚РµР»СЊ РЅР° input С„Р°Р№Р»</param>
+///<param name="fileOutput">вЂќРєР°Р·Р°С‚РµР»СЊ РЅР° output С„Р°Р№Р»</param>
+///<param name="n">вЂќРєР°Р·Р°С‚РµР»СЊ РЅР° РїРµСЂРµРјРµРЅРЅСѓСЋ РґР»В¤ С…СЂР°РЅРµРЅРёВ¤ РєРѕР»РёС‡РµСЃС‚РІР° СѓР·Р»РѕРІ</param>
+///<returns>вЂ”РѕР·РґР°РЅРёРµ РіСЂР°С„Р° Рё РІРѕР·РІСЂР°С‚ СЂР°Р·РјРµСЂР° РіСЂР°С„Р°</returns>
 int createGraph(FILE *fileInput, FILE *fileOutput, int *n);
 
 ///<summary>
-/// Добавление элемента в очередь
+/// Ж’РѕР±Р°РІР»РµРЅРёРµ СЌР»РµРјРµРЅС‚Р° РІ РѕС‡РµСЂРµРґСЊ
 ///</summary>
-///<param name="node">Узел</param>
-///<param name="pImpos">Указатель на impos</param>
-///<param name="pRear">Задняя часть очереди</param>
-///<param name="pFront">Передняя часть очереди</param>
-///<param name="pQueue">Очередь</param>
+///<param name="node">вЂќР·РµР»</param>
+///<param name="pImpos">вЂќРєР°Р·Р°С‚РµР»СЊ РЅР° impos</param>
+///<param name="pRear">В«Р°РґРЅВ¤В¤ С‡Р°СЃС‚СЊ РѕС‡РµСЂРµРґРё</param>
+///<param name="pFront">С•РµСЂРµРґРЅВ¤В¤ С‡Р°СЃС‚СЊ РѕС‡РµСЂРµРґРё</param>
+///<param name="pQueue">СњС‡РµСЂРµРґСЊ</param>
 void insertQueue(int node, int *pImpos, int *pRear, int *pFront, int *pQueue);
 
 ///<summary>
-/// Удаление элемента из очереди
+/// вЂќРґР°Р»РµРЅРёРµ СЌР»РµРјРµРЅС‚Р° РёР· РѕС‡РµСЂРµРґРё
 ///</summary>
-///<param name="pImpos">Указатель на impos</param>
-///<param name="pRear">Задняя часть очереди</param>
-///<param name="pFront">Передняя часть очереди</param>
-///<param name="pQueue">Очередь</param>
+///<param name="pImpos">вЂќРєР°Р·Р°С‚РµР»СЊ РЅР° impos</param>
+///<param name="pRear">В«Р°РґРЅВ¤В¤ С‡Р°СЃС‚СЊ РѕС‡РµСЂРµРґРё</param>
+///<param name="pFront">С•РµСЂРµРґРЅВ¤В¤ С‡Р°СЃС‚СЊ РѕС‡РµСЂРµРґРё</param>
+///<param name="pQueue">СњС‡РµСЂРµРґСЊ</param>
 int deleteQueue(int *pImpos, int *pRear, int *pFront, int *pQueue);
 
 ///<summary>
-/// Число ребер, входящих в вершину
+/// вЂћРёСЃР»Рѕ СЂРµР±РµСЂ, РІС…РѕРґВ¤С‰РёС… РІ РІРµСЂС€РёРЅСѓ
 ///</summary>
-///<param name="node">Список</param>
-///<param name="n">Указатель на переменную для хранения количества узлов</param>
-///<returns>Возвращает число ребер, входящих в вершину</returns>
+///<param name="node">вЂ”РїРёСЃРѕРє</param>
+///<param name="n">вЂќРєР°Р·Р°С‚РµР»СЊ РЅР° РїРµСЂРµРјРµРЅРЅСѓСЋ РґР»В¤ С…СЂР°РЅРµРЅРёВ¤ РєРѕР»РёС‡РµСЃС‚РІР° СѓР·Р»РѕРІ</param>
+///<returns>В¬РѕР·РІСЂР°С‰Р°РµС‚ С‡РёСЃР»Рѕ СЂРµР±РµСЂ, РІС…РѕРґВ¤С‰РёС… РІ РІРµСЂС€РёРЅСѓ</returns>
 int inDegree(int node, int *n);
 
 #endif
