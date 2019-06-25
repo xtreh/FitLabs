@@ -10,18 +10,18 @@
 #define MAX_INT 2147483647
 
 ///<summary>
-/// Очистка 2D-массива
+/// РћС‡РёСЃС‚РєР° 2D-РјР°СЃСЃРёРІР°
 ///</summary>
-///<param name="Arr">Массив</param>
-///<param name="n">Размер массива</param>
+///<param name="Arr">РњР°СЃСЃРёРІ</param>
+///<param name="n">Р Р°Р·РјРµСЂ РјР°СЃСЃРёРІР°</param>
 void Set2DFree(int **Arr, int n);
 
 ///<summary>
-/// Алгоритм Прайма
+/// РђР»РіРѕСЂРёС‚Рј РџСЂР°Р№РјР°
 ///</summary>
-///<param name="n">Размер массива</param>
-///<param name="G">Массив</param>
-///<param name="output">Файл вывода</param>
+///<param name="n">Р Р°Р·РјРµСЂ РјР°СЃСЃРёРІР°</param>
+///<param name="G">РњР°СЃСЃРёРІ</param>
+///<param name="output">Р¤Р°Р№Р» РІС‹РІРѕРґР°</param>
 void Prims(int n, int **G, FILE *output);
 
 #endif
