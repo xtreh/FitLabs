@@ -10,7 +10,7 @@
 #define MAX_EDGES 12500000
 
 ///<summary>
-///Край графа
+///В РљСЂР°Р№ РіСЂР°С„Р°
 ///</summary>
 typedef struct _EDGE 
 {
@@ -24,20 +24,20 @@ extern int g_Nodes[MAX_NODES];
 extern int g_LastN;
 
 ///<summary>
-///Функция сравнения для qsort
+///Р¤СѓРЅРєС†РёСЏ СЃСЂР°РІРЅРµРЅРёСЏ РґР»СЏ qsort
 ///</summary>
-///<param name="a">Первый край</param>
-///<param name="b">Второй край</param>
-///<returns>Возвращает разницу между весом краёв</returns>
+///<param name="a">РџРµСЂРІС‹Р№ РєСЂР°Р№</param>
+///<param name="b">Р’С‚РѕСЂРѕР№ РєСЂР°Р№</param>
+///<returns>Р’РѕР·РІСЂР°С‰Р°РµС‚ СЂР°Р·РЅРёС†Сѓ РјРµР¶РґСѓ РІРµСЃРѕРј РєСЂР°С‘РІ</returns>
 int cmpSqrt(const void *a, const void *b);
 
 ///<summary>
-///Функция получает цвет узла
+///Р¤СѓРЅРєС†РёСЏ РїРѕР»СѓС‡Р°РµС‚ С†РІРµС‚ СѓР·Р»Р°
 ///</summary>
-///<param name="n">Первый край</param>
+///<param name="n">РџРµСЂРІС‹Р№ РєСЂР°Р№</param>
 ///<returns>
-/// g_Nodes[n] < 0 => узел n имеет цветные g_Nodes[n]
-/// g_Nodes[n] >= 0 => узел n имеет тот же цвет, что и узел g_Nodes[n]
+/// g_Nodes[n] < 0 => СѓР·РµР» n РёРјРµРµС‚ С†РІРµС‚РЅС‹Рµ g_Nodes[n]
+/// g_Nodes[n] >= 0 => СѓР·РµР» n РёРјРµРµС‚ С‚РѕС‚ Р¶Рµ С†РІРµС‚, С‡С‚Рѕ Рё СѓР·РµР» g_Nodes[n]
 ///</returns>
 int getColor(int n);
 

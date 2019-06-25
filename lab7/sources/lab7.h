@@ -18,7 +18,7 @@ extern int g_adjMatrix[MAX_SIZE][MAX_SIZE];
 ///</summary>
 ///<param name="fileInput">Указатель на input файл</param>
 ///<param name="fileOutput">Указатель на output файл</param>
-///<param name="n">Указатель на переменную дл¤ хранени¤ количества узлов</param>
+///<param name="n">Указатель на переменную дл¤ хранения количества узлов</param>
 ///<returns>Создание графа и возврат размера графа</returns>
 int createGraph(FILE *fileInput, FILE *fileOutput, int *n);
 
@@ -36,7 +36,7 @@ void insertQueue(int node, int *pImpos, int *pRear, int *pFront, int *pQueue);
 /// Удаление элемента из очереди
 ///</summary>
 ///<param name="pImpos">Указатель на impos</param>
-///<param name="pRear">«Задняя часть очереди</param>
+///<param name="pRear">Задняя часть очереди</param>
 ///<param name="pFront">Передняя часть очереди</param>
 ///<param name="pQueue">Очередь</param>
 int deleteQueue(int *pImpos, int *pRear, int *pFront, int *pQueue);
@@ -45,7 +45,7 @@ int deleteQueue(int *pImpos, int *pRear, int *pFront, int *pQueue);
 /// Число ребер, вход¤щих в вершину
 ///</summary>
 ///<param name="node">Список</param>
-///<param name="n">Указатель на переменную дл¤ хранени¤ количества узлов</param>
+///<param name="n">Указатель на переменную для хранения количества узлов</param>
 ///<returns>Возвращает число ребер, вход¤щих в вершину</returns>
 int inDegree(int node, int *n);
 
