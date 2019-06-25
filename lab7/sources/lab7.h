@@ -9,44 +9,44 @@
 #define MAX_SIZE 10000
 
 ///<summary>
-/// ћатрица смежности графа
+/// Матрица смежности графа
 ///</summary>
 extern int g_adjMatrix[MAX_SIZE][MAX_SIZE];
 
 ///<summary>
-/// —оздание графа
+/// Создание графа
 ///</summary>
-///<param name="fileInput">”казатель на input файл</param>
-///<param name="fileOutput">”казатель на output файл</param>
-///<param name="n">”казатель на переменную дл¤ хранени¤ количества узлов</param>
-///<returns>—оздание графа и возврат размера графа</returns>
+///<param name="fileInput">Указатель на input файл</param>
+///<param name="fileOutput">Указатель на output файл</param>
+///<param name="n">Указатель на переменную дл¤ хранени¤ количества узлов</param>
+///<returns>Создание графа и возврат размера графа</returns>
 int createGraph(FILE *fileInput, FILE *fileOutput, int *n);
 
 ///<summary>
-/// ƒобавление элемента в очередь
+/// Добавление элемента в очередь
 ///</summary>
-///<param name="node">”зел</param>
-///<param name="pImpos">”казатель на impos</param>
-///<param name="pRear">«адн¤¤ часть очереди</param>
-///<param name="pFront">ѕередн¤¤ часть очереди</param>
-///<param name="pQueue">ќчередь</param>
+///<param name="node">”Уел</param>
+///<param name="pImpos">Указатель на impos</param>
+///<param name="pRear">Задняя часть очереди</param>
+///<param name="pFront">Передняя часть очереди</param>
+///<param name="pQueue">Очередь</param>
 void insertQueue(int node, int *pImpos, int *pRear, int *pFront, int *pQueue);
 
 ///<summary>
-/// ”даление элемента из очереди
+/// Удаление элемента из очереди
 ///</summary>
-///<param name="pImpos">”казатель на impos</param>
-///<param name="pRear">«адн¤¤ часть очереди</param>
-///<param name="pFront">ѕередн¤¤ часть очереди</param>
-///<param name="pQueue">ќчередь</param>
+///<param name="pImpos">Указатель на impos</param>
+///<param name="pRear">«Задняя часть очереди</param>
+///<param name="pFront">Передняя часть очереди</param>
+///<param name="pQueue">Очередь</param>
 int deleteQueue(int *pImpos, int *pRear, int *pFront, int *pQueue);
 
 ///<summary>
-/// „исло ребер, вход¤щих в вершину
+/// Число ребер, вход¤щих в вершину
 ///</summary>
-///<param name="node">—писок</param>
-///<param name="n">”казатель на переменную дл¤ хранени¤ количества узлов</param>
-///<returns>¬озвращает число ребер, вход¤щих в вершину</returns>
+///<param name="node">Список</param>
+///<param name="n">Указатель на переменную дл¤ хранени¤ количества узлов</param>
+///<returns>Возвращает число ребер, вход¤щих в вершину</returns>
 int inDegree(int node, int *n);
 
 #endif
