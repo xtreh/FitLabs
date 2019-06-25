@@ -7,7 +7,7 @@
 #include <stdlib.h>
 
 ///<summary>
-///Узел AVL дерева
+///РЈР·РµР» AVL РґРµСЂРµРІР°
 ///</summary>
 typedef struct _NODE
 {
@@ -20,57 +20,57 @@ typedef struct _NODE
 } NODE, *PNODE;
 
 ///<summary>
-/// Очистка бинарного дерева
+/// РћС‡РёСЃС‚РєР° Р±РёРЅР°СЂРЅРѕРіРѕ РґРµСЂРµРІР°
 ///</summary>
-///<param name="pNode">AVL дерево</param>
+///<param name="pNode">AVL РґРµСЂРµРІРѕ</param>
 void freeNode(PNODE pNode);
 
 ///<summary>
-/// Получение высоты узла AVL дерева
+/// РџРѕР»СѓС‡РµРЅРёРµ РІС‹СЃРѕС‚С‹ СѓР·Р»Р° AVL РґРµСЂРµРІР°
 ///</summary>
-///<param name="pNode">Узел AVL дерева</param>
-///<returns>Высота узла AVL дерева</returns>
+///<param name="pNode">РЈР·РµР» AVL РґРµСЂРµРІР°</param>
+///<returns>Р’С‹СЃРѕС‚Р° СѓР·Р»Р° AVL РґРµСЂРµРІР°</returns>
 unsigned char getNodeHeight(PNODE pNode);
 
 ///<summary>
-/// Получение баланс-фактора бинарного дерева
+/// РџРѕР»СѓС‡РµРЅРёРµ Р±Р°Р»Р°РЅСЃ-С„Р°РєС‚РѕСЂР° Р±РёРЅР°СЂРЅРѕРіРѕ РґРµСЂРµРІР°
 ///</summary>
-///<param name="pNode">AVL дерево</param>
-///<returns>Разница между высотами узлов бинарного дерева</returns>
+///<param name="pNode">AVL РґРµСЂРµРІРѕ</param>
+///<returns>Р Р°Р·РЅРёС†Р° РјРµР¶РґСѓ РІС‹СЃРѕС‚Р°РјРё СѓР·Р»РѕРІ Р±РёРЅР°СЂРЅРѕРіРѕ РґРµСЂРµРІР°</returns>
 int getNodeBalanceFactor(PNODE pNode);
 
 ///<summary>
-/// Обновление высоты AVL дерева
+/// РћР±РЅРѕРІР»РµРЅРёРµ РІС‹СЃРѕС‚С‹ AVL РґРµСЂРµРІР°
 ///</summary>
-///<param name="pNode">AVL дерево</param>
+///<param name="pNode">AVL РґРµСЂРµРІРѕ</param>
 void fixNodeHeight(PNODE pNode);
 
 ///<summary>
-/// Поворот вправо вокруг узла
+/// РџРѕРІРѕСЂРѕС‚ РІРїСЂР°РІРѕ РІРѕРєСЂСѓРі СѓР·Р»Р°
 ///</summary>
-///<param name="pNode">Узел AVL дерева</param>
-///<returns>Левый узел</returns>
+///<param name="pNode">РЈР·РµР» AVL РґРµСЂРµРІР°</param>
+///<returns>Р›РµРІС‹Р№ СѓР·РµР»</returns>
 PNODE rightRotateNode(PNODE pNode);
 
 ///<summary>
-/// Поворот влево вокруг узла
+/// РџРѕРІРѕСЂРѕС‚ РІР»РµРІРѕ РІРѕРєСЂСѓРі СѓР·Р»Р°
 ///</summary>
-///<param name="pNode">Узел AVL дерева</param>
-///<returns>Правый узел</returns>
+///<param name="pNode">РЈР·РµР» AVL РґРµСЂРµРІР°</param>
+///<returns>РџСЂР°РІС‹Р№ СѓР·РµР»</returns>
 PNODE leftRotateNode(PNODE pNode);
 
 ///<summary>
-/// Балансировка AVL дерева
+/// Р‘Р°Р»Р°РЅСЃРёСЂРѕРІРєР° AVL РґРµСЂРµРІР°
 ///</summary>
-///<param name="pNode">AVL дерево</param>
-///<returns>Балансированное бинарное дерево</returns>
+///<param name="pNode">AVL РґРµСЂРµРІРѕ</param>
+///<returns>Р‘Р°Р»Р°РЅСЃРёСЂРѕРІР°РЅРЅРѕРµ Р±РёРЅР°СЂРЅРѕРµ РґРµСЂРµРІРѕ</returns>
 PNODE balanceNode(PNODE pNode);
 
 ///<summary>
-/// Вставка числа в AVL дерево
+/// Р’СЃС‚Р°РІРєР° С‡РёСЃР»Р° РІ AVL РґРµСЂРµРІРѕ
 ///</summary>
-///<param name="pNode">AVL дерево</param>
-///<returns>Полученное AVL дерево</returns>
+///<param name="pNode">AVL РґРµСЂРµРІРѕ</param>
+///<returns>РџРѕР»СѓС‡РµРЅРЅРѕРµ AVL РґРµСЂРµРІРѕ</returns>
 PNODE insertKeyNode(PNODE pNode, unsigned int key);
 
 #endif
